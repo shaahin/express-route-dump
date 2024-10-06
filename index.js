@@ -1,4 +1,4 @@
-export async function dumpRoutes(app, basePath = '', aliases = {}) {
+export default async function dumpRoutes(app, basePath = '', aliases = {}) {
   const routes = {};
 
   const extractRoutePath = (regexp, keys) => {
