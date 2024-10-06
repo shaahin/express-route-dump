@@ -1,6 +1,6 @@
 {
   "name": "express-route-dump",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple js package to print all express.js routes in a table.",
   "main": "index.js",
   "keywords": [],

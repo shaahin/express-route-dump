@@ -23,28 +23,27 @@ npm install express-route-dumper
 Here is a basic example of how to use RouteDumper in your Express application:
 
 ```javascript
-const express = require('express');
-const RouteDumper = require('express-route-dumper'); // Adjust the path if necessary
+import express from 'express'
+import dumpRoutes from 'express-route-dumper'
 
-const app = express();
-const routeDumper = new RouteDumper();
+const app = express()
 
 // Define some routes
-app.get('/api/organization-section/:orgId/posts/:postId', (req, res) => res.send('post route'));
-app.post('/api/organization-section/:orgId/posts', (req, res) => res.send('Create post'));
-app.get('/api/organization-section/:orgId/documents', (req, res) => res.send('Documents route'));
-app.post('/api/academy-section/:acyId/posts', (req, res) => res.send('Create post for academy-section'));
+app.get('/api/organization-section/:orgId/posts/:postId', (req, res) => res.send('post route'))
+app.post('/api/organization-section/:orgId/posts', (req, res) => res.send('Create post'))
+app.get('/api/organization-section/:orgId/documents', (req, res) => res.send('Documents route'))
+app.post('/api/academy-section/:acyId/posts', (req, res) => res.send('Create post for academy-section'))
 
 // Define aliases for the roots
 const aliases = {
   '/api/organization-section': 'Organization API',
   '/api/academy-section': 'Academy API',
-};
+}
 
 // Dump the routes with categorization
-routeDumper.dumpRoutes(app, '', aliases);
+dumpRoutes(app, '', aliases)
 
-app.listen(3000, () => console.log('Server running on port 3000'));
+app.listen(3000, () => console.log('Server running on port 3000'))
 ```
 
 ### Customizing Aliases
@@ -55,7 +54,7 @@ You can customize how routes are displayed by providing an `aliases` object. Thi
 const aliases = {
   '/api/organization-section': 'Organization API',
   '/api/academy-section': 'Academy API',
-};
+}
 ```
 
 ## API
